@@ -77,23 +77,24 @@ Then open the printed localhost URL (typically `http://localhost:5173`) in your 
 
 ## Code structure
 
-- `src/main.jsx` – React entry; sets up the router and global styles.
-- `src/App.jsx` – Top-level routes and shell layout (including a 404-style route).
-- `src/components/Layout.jsx` – Header, navigation, and footer framing the experience.
-- `src/components/ProductCard.jsx` – Reusable product card used in the listing grid.
-- `src/components/FeaturedProducts.jsx` – Featured products band with a more editorial card treatment.
-- `src/components/FilterBar.jsx` – Filter and sort controls for the listing.
-- `src/components/ProductSpecs.jsx` – Structured specs block for the detail view.
-- `src/pages/LandingPage.jsx` – Brand hero and featured products.
-- `src/pages/ProductListingPage.jsx` – Filterable, responsive product grid.
-- `src/pages/ProductDetailPage.jsx` – Full product detail with specs and error handling.
-- `src/data/products.js` – Static, realistic product data for the perfume line.
-- `src/styles.css` – All tokens, layout primitives, and component styles.
+    src/
+    ├── components/
+    │   ├── FeaturedProducts.jsx
+    │   ├── FilterBar.jsx
+    │   ├── Layout.jsx
+    │   ├── ProductCard.jsx
+    │   └── ProductSpecs.jsx
+    │
+    ├── data/
+    │   └── products.js
+    │
+    ├── pages/
+    │   ├── LandingPage.jsx
+    │   ├── ProductDetailPage.jsx
+    │   └── ProductListingPage.jsx
+    │
+    ├── App.jsx
+    ├── main.jsx
+    ├── styles.css
 
-## Known limitations & trade-offs
-
-- **No backend / persistence**: The entire experience is static and read-only. There is no cart, checkout, or account system – intentionally, to keep focus on presentation and UI craft.
-- **Routing strategy**: Uses client-side routing (React Router) and expects to be served via Vite or a static host that supports SPA fallbacks. Direct navigation to deep links may require a catch-all route configuration on some hosts.
-- **Accessibility**: Basic semantics and focus flows are handled, but a full accessibility pass (aria attributes, focus outlines on every control, colour contrast audits) would be a next step for production.
-- **Limited theming**: The palette and typography are opinionated for this brand. Multi-brand or dark-mode support is not implemented, but the CSS token approach would support it with additional work.
 
